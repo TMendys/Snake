@@ -17,9 +17,6 @@ namespace Snake
     class GameModel
     {
         private readonly Timer timer;
-        public bool GameOver { get; set; }
-        public Directions Direction { get; set; } = Directions.Up;
-
         private Random random = new Random();
 
         private char[,] gameTable = new char[10, 20];
@@ -27,14 +24,14 @@ namespace Snake
         private List<Point> Snake = new List<Point>();
 
         private const char snake = 'S';
-
         private const char food = 'F';
-
         private const char empty = '\u2591';
 
         private int speed = 400;
-
         private int score = 0;
+
+        public bool GameOver { get; set; }
+        public Directions Direction { get; set; } = Directions.Up;
 
         public GameModel ()
         {
